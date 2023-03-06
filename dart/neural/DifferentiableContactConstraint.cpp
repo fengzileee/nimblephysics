@@ -113,6 +113,10 @@ collision::Contact& DifferentiableContactConstraint::getContact()
 DofContactType DifferentiableContactConstraint::getDofContactType(
     dynamics::DegreeOfFreedom* dof)
 {
+  if (!mContactConstraint)
+  {
+    return DofContactType::NONE;
+  }
   bool isParentA = dof->isParentOfFast(mContactConstraint->getBodyNodeA());
   bool isParentB = dof->isParentOfFast(mContactConstraint->getBodyNodeB());
   // If we're a parent of both contact points, it's a self-contact down the tree

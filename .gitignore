@@ -32,3 +32,4 @@ perf_results/
 perf_results/perf.data
 perf_results/tmp.perf
 perf_results/tmp.folded
+python/nimblephysics.egg-info/

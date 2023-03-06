@@ -20,10 +20,10 @@ DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/lib" delocate-wheel -w ../wheel
 popd
 
 # Replace the ABI tag with a less general version of OSX, which is important for compatibility with pip on Arm64 macs
-mv wheelhouse/nimblephysics-${VERSION}-cp38-cp38-macosx_10_14_arm64.whl wheelhouse/nimblephysics-${VERSION}-cp38-cp38-macosx_11_0_arm64.whl
+# mv wheelhouse/nimblephysics-${VERSION}-cp38-cp38-macosx_10_14_arm64.whl wheelhouse/nimblephysics-${VERSION}-cp38-cp38-macosx_11_0_arm64.whl
 
 # Install the wheel
-pip3 install --force-reinstall wheelhouse/nimblephysics-${VERSION}-cp38-cp38-macosx_11_0_arm64.whl
+# pip3 install --force-reinstall wheelhouse/nimblephysics-${VERSION}-cp38-cp38-macosx_11_0_arm64.whl
 
 # Actually push the wheel to PyPI
 # python3 -m pip install --user --upgrade twine

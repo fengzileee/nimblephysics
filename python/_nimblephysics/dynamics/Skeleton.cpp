@@ -1480,7 +1480,7 @@ void Skeleton(py::module& m)
       .def(
           "getGravityForces",
           +[](dart::dynamics::Skeleton* self) -> const Eigen::VectorXs& {
-            return self->getCoriolisForces();
+            return self->getGravityForces();
           })
       .def(
           "getCoriolisAndGravityForces",

@@ -4497,7 +4497,10 @@ int collideBoxCapsule(
   {
     if (depth > option.contactClippingDepth)
       return 0;
-    Eigen::Map<Eigen::Vector3d> posMap(pos.v);
+    Eigen::Vector3s posMap;
+    posMap(0) = static_cast<s_t>(pos.v[0]);
+    posMap(1) = static_cast<s_t>(pos.v[1]);
+    posMap(2) = static_cast<s_t>(pos.v[2]);
     Eigen::Vector3s localPos = T1.inverse() * posMap.cast<s_t>();
     if (localPos(2) > height1 / 2)
     {
