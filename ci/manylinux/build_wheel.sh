@@ -12,5 +12,5 @@ rm -rf build/*
 
 # Actually build the code
 python3 setup.py sdist bdist_wheel
+# Fix dynamic lib. Fixed wheel is outputed at ./wheelhouse
 python3 -m auditwheel repair --plat manylinux_2_31_x86_64 dist/nimblephysics-${VERSION}-${PYTHON_VERSION}-linux_x86_64.whl
-mv dist/nimblephysics-${VERSION}-${PYTHON_VERSION}-linux_x86_64.whl wheelhouse/
